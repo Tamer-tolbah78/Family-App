@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="card card-body bg-light">
+        <h1 class="card-title text-primary mb-3 text-center">Family Members</h1>
+        <div class="card card-body bg-secondary">
+            <table *ngFor="let member of familyMembers" class="table table-hover table-dark table-bordered mt-4 mb-4">
+                <thead>
+                    <tr class="table-active text-center text-warning">
+                        <td colspan="2">
+                            <h4>{{ member.title }}</h4>
+                            <span><button class="btn btn-success btn-block btn-sm"
+                                    (click)="member.details = !member.details"
+                                    *ngIf="loggedMember == member.userName">Details</button></span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody *ngIf="member.details">
+                    <tr>
+                        <td class="ml-2">First Name:</td>
+                        <td>{{ member.firstName }}</td>
+                    </tr>
+                    <tr>
+                        <td class="ml-2">Last Name:</td>
+                        <td>{{ member.lastName }}</td>
+                    </tr>
+                    <tr>
+                        <td class="ml-2">Job:</td>
+                        <td>{{ member.job }}</td>
+                    </tr>
+                    <tr>
+                        <td class="ml-2">Age:</td>
+                        <td>{{ member.age }}</td>
+                    </tr>
+                    <tr>
+                        <td class="ml-2">Kids:</td>
+                        <td>{{ member.kids }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

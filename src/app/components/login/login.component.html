@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="jumbotron mt-5 text-center">
+        <h1 class="display-4 text-primary">Welcome to</h1>
+        <hr class="my-4">
+        <p class="lead">Family Tree Application</p>
+        <button class="btn btn-primary mb-3" (click)="hide=!hide">Log in</button>
+
+        <form #memberForm="ngForm" (ngSubmit)="onSubmit(memberForm)" *ngIf="hide">
+            <div class="card card-body">
+                <div class="row form-group">
+                    <label for="userName" class="col-3">UserName:</label>
+                    <input name="userName" #userName="ngModel" ngModel required id="userName" type="text"
+                        class="form-control col-6" [ngClass]="{'is-invalid':userName.errors && userName.touched}">
+                    <div [hidden]="!userName.errors?.required" class="invalid-feedback col-3">User name is required
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label for="password" class="col-3">Password:</label>
+                    <input name="password" #password="ngModel" ngModel required id="password" type="password"
+                        class="form-control col-6" [ngClass]="{'is-invalid':password.errors && password.touched}">
+                    <div [hidden]="!password.errors?.required" class="invalid-feedback col-3">Password is required</div>
+                </div>
+                <button [disabled]="!memberForm.valid" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="jumbotron mt-5 text-center">
+        <h1 class="display-4 text-primary">Welcome {{ LoggedMember }}</h1>
+        <hr class="my-4">
+        <p class="lead">You are logged in Family Members Application</p>
+        <div class="row col-12 justify-content-center mb-3">
+            <button class="btn btn-success" routerLink="/family-members">Members</button>
+            <button class="btn btn-warning ml-4" (click)="onLogOut()">Log out</button>
+        </div>
+    </div>
+</div>
