@@ -8,6 +8,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MembersService } from './services/members.service'
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],

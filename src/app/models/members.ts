@@ -1,4 +1,4 @@
-export interface Members {
+export interface Member {
     title: string,
     userName: string,
     password: string,

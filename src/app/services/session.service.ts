@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Members } from '../models/members';
+import { Member } from '../models/members';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
-  private loggedInUser: Members
+  private loggedInUser: Member
   constructor(private routing: Router) { }
 
-  setLoggedUser(user: Members) {this.loggedInUser=user}
+  setLoggedUser(user: Member) {this.loggedInUser=user}
 
-  getLoggedInUser(): Members {return this.loggedInUser}
+  getLoggedInUser(): Member {return this.loggedInUser}
 
   clearSession() {
     this.loggedInUser=null

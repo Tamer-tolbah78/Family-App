@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MembersService } from 'src/app/services/members.service';
-import { Members } from 'src/app/models/members';
+import { Member } from 'src/app/models/members';
 import { SessionService } from 'src/app/services/session.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/services/session.service';
   styleUrls: ['./family-members.component.css']
 })
 export class FamilyMembersComponent implements OnInit {
-  familyMembers: Members[];
+  familyMembers: Member[];
   details: boolean
   loggedMember = this.session.getLoggedInUser().userName
 
@@ -18,4 +18,4 @@ export class FamilyMembersComponent implements OnInit {
   ngOnInit() {
     this.familyMembers = this.members.getMembers();
   }
-  }
+}
